@@ -35,3 +35,12 @@ exports.deleteCourse = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
+
+exports.getAllCourses = async (req, res) => {
+  try {
+    const course = await courseService.getAllCourses()
+    res.json({ data: course, status: "success" })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}

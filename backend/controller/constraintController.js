@@ -40,3 +40,12 @@ exports.deleteConstraint = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
+
+exports.getAllConstraints = async (req, res) => {
+  try {
+    const constraint = await constraintService.getAllConstraints()
+    res.json({ data: constraint, status: "success" })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}

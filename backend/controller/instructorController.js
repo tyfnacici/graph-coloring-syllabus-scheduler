@@ -1,6 +1,6 @@
 const instructorService = require("../service/instructorService")
 
-exports.createinstructor = async (req, res) => {
+exports.createInstructor = async (req, res) => {
   try {
     const instructor = await instructorService.createInstructor(req.body)
     res.json({ data: instructor, status: "success" })
@@ -9,7 +9,7 @@ exports.createinstructor = async (req, res) => {
   }
 }
 
-exports.getinstructorByinstructorId = async (req, res) => {
+exports.getInstructorByinstructorId = async (req, res) => {
   try {
     const instructor = await instructorService.getInstructorByInstructorId(
       req.params.id
@@ -20,7 +20,7 @@ exports.getinstructorByinstructorId = async (req, res) => {
   }
 }
 
-exports.updateinstructor = async (req, res) => {
+exports.updateInstructor = async (req, res) => {
   try {
     const instructor = await instructorService.updateInstructor(
       req.params.id,
@@ -32,9 +32,18 @@ exports.updateinstructor = async (req, res) => {
   }
 }
 
-exports.deleteinstructor = async (req, res) => {
+exports.deleteInstructor = async (req, res) => {
   try {
     const instructor = await instructorService.deleteInstructor(req.params.id)
+    res.json({ data: instructor, status: "success" })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
+exports.getAllInstructors = async (req, res) => {
+  try {
+    const instructor = await instructorService.getAllInstructors()
     res.json({ data: instructor, status: "success" })
   } catch (error) {
     res.status(500).json({ error: error.message })

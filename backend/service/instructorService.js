@@ -9,3 +9,7 @@ exports.updateInstructor = async (id, instructor) =>
   instructorModel.findOneAndUpdate({ id }, instructor, { new: true })
 
 exports.deleteInstructor = async (id) => instructorModel.findOneAndDelete(id)
+
+exports.getAllInstructors = async () => {
+  instructorModel.find()
+}

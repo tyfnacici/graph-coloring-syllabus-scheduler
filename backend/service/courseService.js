@@ -8,3 +8,7 @@ exports.updateCourse = async (id, course) =>
   courseModel.findOneAndUpdate({ id }, course, { new: true })
 
 exports.deleteCourse = async (id) => courseModel.findOneAndDelete(id)
+
+exports.getAllCourses = async () => {
+  courseModel.find()
+}

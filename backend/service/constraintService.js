@@ -9,3 +9,7 @@ exports.updateConstraint = async (id, constraint) =>
   constraintModel.findOneAndUpdate({ id }, constraint, { new: true })
 
 exports.deleteConstraint = async (id) => constraintModel.findOneAndDelete(id)
+
+exports.getAllConstraints = async () => {
+  constraintModel.find()
+}
