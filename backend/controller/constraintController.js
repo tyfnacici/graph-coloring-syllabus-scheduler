@@ -1,6 +1,6 @@
 const constraintService = require("../service/constraintService")
 
-exports.createconstraint = async (req, res) => {
+exports.createConstraint = async (req, res) => {
   try {
     const constraint = await constraintService.createConstraint(req.body)
     res.json({ data: constraint, status: "success" })
@@ -9,7 +9,7 @@ exports.createconstraint = async (req, res) => {
   }
 }
 
-exports.getconstraintByconstraintId = async (req, res) => {
+exports.getConstraintByConstraintId = async (req, res) => {
   try {
     const constraint = await constraintService.getConstraintByConstraintId(
       req.params.id
@@ -20,7 +20,7 @@ exports.getconstraintByconstraintId = async (req, res) => {
   }
 }
 
-exports.updateconstraint = async (req, res) => {
+exports.updateConstraint = async (req, res) => {
   try {
     const constraint = await constraintService.updateConstraint(
       req.params.id,
@@ -32,7 +32,7 @@ exports.updateconstraint = async (req, res) => {
   }
 }
 
-exports.deleteconstraint = async (req, res) => {
+exports.deleteConstraint = async (req, res) => {
   try {
     const constraint = await constraintService.deleteConstraint(req.params.id)
     res.json({ data: constraint, status: "success" })
