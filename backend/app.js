@@ -1,3 +1,4 @@
+const api = require('./api/index');
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -22,6 +23,4 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 // route
-app.get("/", (req, res) => {
-    res.status(201).json({message: "Connected to Backend!"});
-});
+app.use('/', api);
