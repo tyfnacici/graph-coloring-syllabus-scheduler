@@ -1,10 +1,10 @@
 const courseModel = require("../model/course")
 
-exports.createcourse = async (course) => courseModel.create(course)
+exports.createCourse = async (course) => courseModel.create(course)
 
-exports.findcourseByID = async (id) => courseModel.findOne({ _id: id })
+exports.findCourseByID = async (id) => courseModel.findOne({ _id: id })
 
-exports.updatecourse = async (id, course) =>
+exports.updateCourse = async (id, course) =>
   courseModel.findOneAndUpdate({ id }, course, { new: true })
 
-exports.deletecourse = async (id) => courseModel.findOneAndDelete(id)
+exports.deleteCourse = async (id) => courseModel.findOneAndDelete(id)
