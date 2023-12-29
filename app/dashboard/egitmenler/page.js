@@ -1,11 +1,12 @@
 "use client"
 
 import React from "react"
+import Modal from "@/app/components/modal"
 
 export default function page() {
   return (
     <>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-gray-400">
           <thead className="text-gray-700 uppercase bg-gray-50">
             <tr>
